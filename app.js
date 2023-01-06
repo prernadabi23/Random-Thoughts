@@ -124,7 +124,7 @@ app.get("/submit", function(req ,res){
 });
 
 app.post("/submit", function(req, res){
-  const submittedPassword = req.body.pass;
+  const submittedPassword = req.body.password;
 
   // console.log(req.user.id );
 
@@ -133,7 +133,7 @@ app.post("/submit", function(req, res){
       console.log(err);
     } else{
       if(foundUser){
-        foundUser.pass = submittedPassword;
+        foundUser.password = submittedPassword;
         foundUser.save(function(){
           res.redirect("/passwords");
         });
